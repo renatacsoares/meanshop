@@ -1,0 +1,36 @@
+<!-- Pagina dos produtos na tela -->
+<!-- ng-include insere o codigo html a partir do caminho indicado
+ ng-repeat nesse caso ira criara um div com tudo que houver dentro de cada produtos
+pipe | são filtros
+ui-sref passa parametro que combinem com o URL definido nas rotas  -->
+
+<navbar></navbar>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <h1>Products</h1>
+        <p ng-show="products.length < 1"> No products to show.</p>
+        <a ui-sref="newProduct">New Product</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4" ng-repeat="product in products">
+        <div class="thumbnail">
+          <img src="http://placehold.it/300X200" alt={{product.title}}>
+          <div class="caption">
+            <h3>{{product.title}}</h3>
+            <p>{{product.description | limitTo:100}} ...</p>
+            <p>{{product.price | currency}}</p>
+            <p>
+              <a href="#" class="btn btn-primary" role="button">Buy</a>
+              <a ui-sref="viewProduct({id: product._id})" class="btn btn-defautl" role="button">Details</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer></footer>
+  

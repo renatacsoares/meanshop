@@ -1,0 +1,24 @@
+<!-- link edit/delete dentro da visao dos detalhes de produto -->
+
+<navbar></navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-mf-offset-2">
+      <img src="http://placehold.it/300X200" alt="{{product.title}}">
+      <div class="caption">
+        <h3> {{product.title}}</h3>
+        <p> {{product.description}}</p>
+        <p> {{product.price | currency }}</p>
+        <p>
+          <a href="#" class="btn btn-primary" role="button">Buy</a>
+          <a ui-sref="products" class="btn btn default" role="button">Back</a>
+          <a ui-sref="editProduct({id: product_id})" class="btn btn-default" role="button">Edit</a>
+          <a class="btn btn-danger" ng-click "deleteProduct()">Delete</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer></footer> 

@@ -1,0 +1,36 @@
+<navbar></navbar>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Barbarellas</h1>
+    <p class="lead">Enxovais de Ibitinga!!</p>
+    <img src="assets/images/barbarellas.jpg" alt="The meanstack shop">
+  </div>
+</header>
+
+ <!-- ng repeat awesomeThings é um array definido no controller e thing representa cada elemento do array
+ ng-click quando clicado no botao deleteThing() é executada a funcao e essa que está no MainCtrl-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Novos Produtos:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="product in products">
+        <li><a ui-sref="viewProduct({id: product._id})" tooltip="{{product.description}}">
+          {{product.title}} -
+          <span class="text-muted"> {{product.price | currency}}</span>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="thing-form">
+    <label>Sell you Products</label>
+    <p class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" ui-sref="newProduct()">Add New</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer></footer>
